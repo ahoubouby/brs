@@ -26,8 +26,9 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
-
+/server/
 ### VS Code ###
 .vscode/
 .idea/
+.mvn/
 db/
