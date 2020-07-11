@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f782ebec-f91c-40a5-a534-bcc5961cfb0d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1eEuljwXVOTAIyNxfUQdVWjG9zj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../../../akka_in_action/chapter-remoting" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../akka_in_action/chapter-routing" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../scala/akka_cluster/exercices/scala" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../scala/akka_stream_training/exercises" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../scala/akka_streams_training" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/LSL-P-lightbend-scala-language-professional/exercises" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/akka_training" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f782ebec-f91c-40a5-a534-bcc5961cfb0d" name="Default Changelist" comment="" />
+      <created>1593899226215</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593899226215</updated>
+      <workItem from="1593899232070" duration="165000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593899483362">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593899483362" />
+    <state x="478" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1593899244687">
+      <screen x="0" y="23" width="1680" height="989" />
+    </state>
+    <state x="478" y="357" key="com.intellij.ide.util.TipDialog/0.23.1680.989@0.23.1680.989" timestamp="1593899244687" />
+  </component>
+</project>

@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "39381a36-b456-4ee1-9a12-9b59dfb59d88",
+		"name": "brSystem",
+		"description": "collection we describe simple work flow how its work ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "localhost:8080/api/auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "49ce4400-17bb-47df-98ff-d5f0ceea60a8",
+								"exec": [
+									"const  auth = responseHeaders.Authorization",
+									"postman.setEnvironmentVariable(\"auth\", auth);",
+									"",
+									"pm.test(\"response heeader has include Bearer in Authorization \", function () {",
+									"    pm.expect(auth).to.be.include(\"Bearer\")",
+									"});",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin.agencya@gmail.com\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c1bf856d-1ed4-4b00-8b7e-db0cf2c18b5b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "df524683-2f02-4a82-9584-7708eab52341",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "reservation",
+			"item": [
+				{
+					"name": "allstop",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "af3318a2-f571-4d0f-b316-954bc31ae675",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/{{api_version_1}}/reservation/stops",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{api_version_1}}",
+								"reservation",
+								"stops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tripsbystop",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9ac2287d-16b8-472d-8c2b-cd2794252fa7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sourceStop\":\"STPA\",\n    \"destinationStop\":\"STPB\",\n    \"tripDate\":\"2020-06-06\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{api_version_1}}/reservation/tripsbystops",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{api_version_1}}",
+								"reservation",
+								"tripsbystops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tripschedules",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c2b126cb-92eb-4812-a609-30bb41bd8d2f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sourceStop\":\"STPA\",\n    \"destinationStop\":\"STPB\",\n    \"tripDate\":\"2020-06-06\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{api_version_1}}/reservation/tripschedules",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{api_version_1}}",
+								"reservation",
+								"tripschedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookATicket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "93c83f9e-9e0a-4939-b61b-30e7d467f045",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tripID\":\"5efcf6409a895031c8d9b3e8\",\n    \"tripDate\":\"2020-06-06\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{api_version_1}}/reservation/bookticket",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{api_version_1}}",
+								"reservation",
+								"bookticket"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{auth}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "50aba9a5-e08c-42d8-aa50-0dcc56bdd411",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "29a8b33b-8bca-44d4-848b-1fae1c1431a1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
