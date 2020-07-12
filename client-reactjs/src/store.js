@@ -3,6 +3,7 @@ import { routerMiddleware } from "react-router-redux";
 import { applyMiddleware, compose, createStore } from "redux";
 import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
 import thunk from "redux-thunk";
+import config from "./config";
 import rootReducer from "./ducks";
 
 export const history = createHistory();
@@ -41,9 +42,8 @@ function configureStoreDev(initialState) {
   return store;
 }
 
-export const configureStore =
-  process.env.NODE_ENV === "production"
-    ? configureStoreProd
-    : configureStoreDev;
+export const configureStore = config.isDevelopment
+  ? configureStoreDev
+  : configureStoreProd;
 
 export const store = configureStore();
