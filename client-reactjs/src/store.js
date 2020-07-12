@@ -1,16 +1,49 @@
-import { applyMiddleware, compose, createStore } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-//import rootReducer from './_reducers';
+import createHistory from "history/createBrowserHistory";
+import { routerMiddleware } from "react-router-redux";
+import { applyMiddleware, compose, createStore } from "redux";
+import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
+import thunk from "redux-thunk";
+import rootReducer from "./ducks";
 
-const middlewares = [thunkMiddleware];
+export const history = createHistory();
 
-if (process.env.NODE_ENV === 'development') {
-    const { logger } = require('redux-logger');
-    middlewares.push(logger);
+function configureStoreProd(initialState) {
+  const reactRouterMiddleware = routerMiddleware(history);
+  const middlewares = [thunk, reactRouterMiddleware];
+
+  const store = createStore(
+    rootReducer,
+    initialState,
+    compose(applyMiddleware(...middlewares))
+  );
+
+  return store;
 }
-export const store = createStore({},
-    compose(
-        applyMiddleware(...middlewares),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-    ),
-);
+
+function configureStoreDev(initialState) {
+  const reactRouterMiddleware = routerMiddleware(history);
+  const middlewares = [
+    thunk,
+    reactRouterMiddleware,
+
+    // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.
+    reduxImmutableStateInvariant(),
+  ];
+
+  const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // add support for Redux dev tools
+  const store = createStore(
+    rootReducer,
+    initialState,
+    composeEnhancers(applyMiddleware(...middlewares))
+  );
+
+  return store;
+}
+
+export const configureStore =
+  process.env.NODE_ENV === "production"
+    ? configureStoreProd
+    : configureStoreDev;
+
+export const store = configureStore();
