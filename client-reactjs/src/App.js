@@ -10,7 +10,7 @@ function App() {
       {
         <Switch>
           {routees.map((el, index) => (
-            <Route component={el.component} path={el.path} />
+            <Route component={el.component} path={el.path} key={index} />
           ))}
         </Switch>
       }

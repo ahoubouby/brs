@@ -1,8 +1,25 @@
 import React, { memo, useState } from "react";
+import { useDispatch } from "react-redux";
 import "./style.css";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+
+  const handleEmailChange = (e) => {
+    const { value } = e.target;
+    setEmail(value);
+  };
+
+  const handlePasswordChange = (e) => {
+    const { value } = e.target;
+    setPassword(value);
+  };
+
+  const submit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="ui middle aligned center aligned grid">
@@ -12,16 +29,28 @@ const Login = () => {
             <div className="field">
               <div className="ui left icon input">
                 <i className="user icon"></i>
-                <input type="text" name="email" placeholder="E-mail address" />
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="E-mail address"
+                  onChange={handleEmailChange}
+                />
               </div>
             </div>
             <div className="field">
               <div className="ui left icon input">
                 <i className="lock icon"></i>
-                <input type="password" name="password" placeholder="Password" />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={handlePasswordChange}
+                />
               </div>
             </div>
-            <div className="ui fluid large teal submit button">Login</div>
+            <div className="ui fluid large teal submit button" onClick={submit}>
+              Login
+            </div>
           </div>
           <div className="ui error message"></div>
         </form>
@@ -30,12 +59,6 @@ const Login = () => {
   );
 };
 
-/*
- path: '/todo',
-    component: memo(TodoApp),
-    },
-    name: 'todo App simple',
-*/
 export default {
   path: "/login",
   component: memo(Login),
