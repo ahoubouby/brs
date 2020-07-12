@@ -29,7 +29,7 @@ const envSchema = joi
       .falsy("FALSE")
       .falsy("false")
       .default(true),
-    API_ROOT: joi.string().uri().default("http://localhost:8080/api/v1/"),
+    API_ROOT: joi.string().uri().default("http://localhost:8080/api/"),
   })
   .unknown()
   .required();
@@ -50,6 +50,7 @@ const config = {
     enabled: envVars.LOGGER_ENABLED,
   },
   apiRoot: envVars.API_ROOT,
+  timeOut: 3000,
 };
 
 export default config;
