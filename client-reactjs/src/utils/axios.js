@@ -1,6 +1,6 @@
 import axios from "axios";
 import config from "../config";
-import { authHeader } from "./auth-header";
+import { authHeader, cleanToken } from "./auth_header";
 
 export const defaultInstance = axios.create({
   baseURL: config.apiRoot,
@@ -21,7 +21,7 @@ export const buildErrObject = (code, message) => ({
  *  Checks if a network request came back fine, or not
  * @param {number} status - http status req
  */
-const isValidStatus = ({ status }) => status >= 200 && status < 300;
+export const isValidRequest = ({ status }) => status >= 200 && status < 300;
 
 const ejectJWTInterpetor = defaultInstance.interceptors.request.use((value) => {
   if (value.url !== "login" && value.url !== "/") {
@@ -37,7 +37,7 @@ const ejectJWTInterpetor = defaultInstance.interceptors.request.use((value) => {
 });
 
 const ejectRequestID = defaultInstance.interceptors.response.use((value) => {
-  if (isValidStatus(value)) {
+  if (isValidRequest(value)) {
     return value;
   }
   if (value.status === 401) {

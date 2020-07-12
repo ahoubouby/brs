@@ -1,5 +1,6 @@
 import React, { memo, useState } from "react";
 import { useDispatch } from "react-redux";
+import { login } from "../../ducks/login";
 import "./style.css";
 
 const Login = () => {
@@ -18,6 +19,7 @@ const Login = () => {
   };
 
   const submit = (e) => {
+    dispatch(login(email, password));
     e.preventDefault();
   };
 

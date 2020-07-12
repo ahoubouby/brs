@@ -1,2 +1,2 @@
-export * from "./auth_header";
+export * from "../utils/auth_header";
 export { default } from "./env";
