@@ -1,17 +1,19 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
+import { routees } from "./routers";
 
+const Home = () => <div>Home dom botoom</div>;
 function App() {
   return (
     <div className="ui container">
-      welcome to brs comming soon
-      {/*
+      {
         <Switch>
-         {routees.map((el, index) => (
-          <Route component={el.component} path={el.path} />
-        ))}
+          {routees.map((el, index) => (
+            <Route component={el.component} path={el.path} />
+          ))}
         </Switch>
-      */}
+      }
     </div>
   );
 }

@@ -1,4 +1,6 @@
-const routees = [];
+import login from "../component/login";
+
+const routees = [login];
 /*
  routeProps: {
     path: '/todo',
