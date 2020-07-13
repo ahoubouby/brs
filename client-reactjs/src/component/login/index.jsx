@@ -1,11 +1,13 @@
 import React, { memo, useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../ducks/login";
+import { emailRegex, isValid } from "../../utils/functions";
 import "./style.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
   const dispatch = useDispatch();
 
   const handleEmailChange = (e) => {
@@ -19,7 +21,9 @@ const Login = () => {
   };
 
   const submit = (e) => {
-    dispatch(login(email, password));
+    if (isValid(emailRegex, email)) {
+      dispatch(login(email, password));
+    } else setError(true);
     e.preventDefault();
   };
 
@@ -50,12 +54,15 @@ const Login = () => {
                 />
               </div>
             </div>
+            <div className="ui error message">ops error in login form</div>
             <div className="ui fluid large teal submit button" onClick={submit}>
               Login
             </div>
           </div>
-          <div className="ui error message"></div>
         </form>
+        {/* <>
+          <Spinner />
+        </> */}
       </div>
     </div>
   );

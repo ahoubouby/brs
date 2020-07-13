@@ -186,14 +186,6 @@ export function objectEquals(obj, obj2) {
   return false;
 }
 
-const log = (value) => console.log(value);
-//functors to avoid null and undefined
-//Maybe(empty).map(log); // does not log
-//Maybe('Maybe Foo').map(log); // logs "Maybe Foo"
+export const emailRegex = "[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$";
 
-const Just = (value) => ({
-  map: (f) => Just(f(value)),
-});
-const Nothing = () => ({
-  map: () => Nothing(),
-});
+export const isValid = (pattern, value) => new RegExp(pattern).test(value);

@@ -1,8 +1,7 @@
 import React, { lazy, Suspense } from "react";
 
-// importFunction => () => Promise
 const loadable = (importFunc, fallback) => {
-  const LazyComp = lazy(importFunc);
+  const LazyComponent = lazy(importFunc);
   return (props) => (
     <Suspense fallback={fallback}>
       <LazyComponent {...props} />
