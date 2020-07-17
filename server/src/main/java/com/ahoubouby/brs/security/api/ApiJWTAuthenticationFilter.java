@@ -57,7 +57,8 @@ public class ApiJWTAuthenticationFilter extends UsernamePasswordAuthenticationFi
                                             FilterChain chain,
                                             Authentication auth) throws IOException, ServletException {
         if (auth.getPrincipal() != null) {
-            org.springframework.security.core.userdetails.User user = (org.springframework.security.core.userdetails.User) auth.getPrincipal();
+            org.springframework.security.core.userdetails.User user =
+                    (org.springframework.security.core.userdetails.User) auth.getPrincipal();
             String login = user.getUsername();
             if (login != null && login.length() > 0) {
                 Claims claims = Jwts.claims().setSubject(login);

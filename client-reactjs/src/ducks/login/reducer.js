@@ -1,7 +1,7 @@
 import * as actions from "./actions";
 const initialState = {
   status: "logged_out",
-  user: null,
+  jwt: null,
 };
 
 export default function reducer(state = initialState, action) {
@@ -9,7 +9,7 @@ export default function reducer(state = initialState, action) {
     case actions.LOGGED_IN_SUCCESS:
       return {
         status: "logged_in",
-        user: action.payload,
+        jwt: action.payload,
       };
 
     case actions.LOGGED_OUT_SUCCESS:

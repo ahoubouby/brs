@@ -6,7 +6,10 @@ const login = (email, password) => async (dispatch) => {
   try {
     const result = await AuthApi.login(email, password);
     isValidRequest(result)
-      ? dispatch({ type: LOGGED_IN_SUCCESS, payload: result })
+      ? dispatch({
+          type: LOGGED_IN_SUCCESS,
+          payload: result.headers.authorization,
+        })
       : dispatch({
           type: LOGGIN_IN_FAILED,
           payload: buildErrObject(result.status, "err"),

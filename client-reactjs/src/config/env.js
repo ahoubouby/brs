@@ -29,7 +29,7 @@ const envSchema = joi
       .falsy("FALSE")
       .falsy("false")
       .default(true),
-    API_ROOT: joi.string().uri().default("http://localhost:8080/api/"),
+    API_ROOT: joi.string().uri().default("api/"),
   })
   .unknown()
   .required();
