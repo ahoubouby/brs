@@ -18,7 +18,6 @@ export default memo((options = {}, clickToPause = false) => {
     ...defaultOptions,
     ...options,
   };
-  console.log(animationData);
   return (
     <>
       <Lottie
