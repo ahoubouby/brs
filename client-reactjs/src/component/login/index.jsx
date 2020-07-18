@@ -2,7 +2,6 @@ import React, { memo, useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../ducks/login";
 import { emailRegex, isValid } from "../../utils/functions";
-import Spinner from "../../widgets/spinner";
 import "./style.css";
 
 const Login = () => {
@@ -59,7 +58,6 @@ const Login = () => {
             <div className="ui fluid large teal submit button" onClick={submit}>
               Login
             </div>
-            <Spinner />
           </div>
         </form>
       </div>

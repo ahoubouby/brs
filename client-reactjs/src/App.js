@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import { routees } from "./routers";
+import Spinner from "./widgets/spinner";
 
-const Home = () => <div>Home dom botoom</div>;
 function App() {
   return (
     <div className="ui container">
@@ -14,6 +14,7 @@ function App() {
           ))}
         </Switch>
       }
+      <Spinner />
     </div>
   );
 }

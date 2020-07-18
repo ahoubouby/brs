@@ -1,9 +1,6 @@
 import React, { memo } from "react";
 import Lottie from "react-lottie";
-import animationData from "../lotties/lottie-loading.json";
-const style = {
-  margin: "3O px",
-};
+import animationData from "../../lotties/lottie-loading.json";
 
 const defaultOptions = {
   loop: true,
@@ -19,13 +16,13 @@ export default memo((options = {}, clickToPause = false) => {
     ...options,
   };
   return (
-    <>
+    <div className="container">
       <Lottie
         options={mixedOptions}
         height={50}
         width={50}
         isClickToPauseDisabled={!!clickToPause}
       />
-    </>
+    </div>
   );
 });
