@@ -1,12 +1,10 @@
-import { createBrowserHistory } from "history";
 import { routerMiddleware } from "react-router-redux";
 import { applyMiddleware, compose, createStore } from "redux";
 import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
 import thunk from "redux-thunk";
 import config from "./config";
 import rootReducer from "./ducks";
-
-export const history = createBrowserHistory();
+import { history } from "./utils/history";
 
 function configureStoreProd(initialState) {
   const reactRouterMiddleware = routerMiddleware(history);
