@@ -10,14 +10,10 @@ const Login = () => {
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
 
-  const handleEmailChange = (e) => {
-    const { value } = e.target;
-    setEmail(value);
-  };
-
-  const handlePasswordChange = (e) => {
-    const { value } = e.target;
-    setPassword(value);
+  const handleSideEffect = (effect) => (evt) => {
+    const { target } = evt;
+    const { value } = target;
+    effect(value);
   };
 
   const submit = (e) => {
@@ -39,7 +35,7 @@ const Login = () => {
                   type="text"
                   name="email"
                   placeholder="E-mail address"
-                  onChange={handleEmailChange}
+                  onChange={handleSideEffect(setEmail)}
                 />
               </div>
             </div>
@@ -50,7 +46,7 @@ const Login = () => {
                   type="password"
                   name="password"
                   placeholder="Password"
-                  onChange={handlePasswordChange}
+                  onChange={handleSideEffect(setPassword)}
                 />
               </div>
             </div>

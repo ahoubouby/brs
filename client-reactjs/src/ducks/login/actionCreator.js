@@ -18,7 +18,6 @@ const login = (email, password) => async (dispatch) => {
   try {
     dispatch(start());
     const result = await AuthApi.login(email, password);
-    debugger;
     isValidRequest(result)
       ? dispatch(logedInSuccessed(result))
       : dispatch(logedInFailed(result));
@@ -27,7 +26,6 @@ const login = (email, password) => async (dispatch) => {
   } catch (err) {
     dispatch(logedInFailed({ status: 500, message: "internal error" }));
     dispatch(stop());
-    debugger;
   }
 };
 
