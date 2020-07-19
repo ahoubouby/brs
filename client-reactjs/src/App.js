@@ -5,17 +5,19 @@ import "./App.css";
 import { routees } from "./routers";
 import Spinner from "./widgets/spinner";
 
+const Routees = () => (
+  <Switch>
+    {routees.map((el, index) => (
+      <Route component={el.component} path={el.path} key={index} />
+    ))}
+  </Switch>
+);
+
 function App() {
   const { isLoading } = useSelector((state) => state.loading, shallowEqual);
   return (
     <div className="ui container">
-      {
-        <Switch>
-          {routees.map((el, index) => (
-            <Route component={el.component} path={el.path} key={index} />
-          ))}
-        </Switch>
-      }
+      <Routees />
       {isLoading && <Spinner />}
     </div>
   );
