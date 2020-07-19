@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../ducks/login";
 import { emailRegex, isValid } from "../../utils/functions";
@@ -63,6 +63,6 @@ const Login = () => {
 
 export default {
   path: "/login",
-  component: memo(Login),
+  component: Login,
   name: "login",
 };
