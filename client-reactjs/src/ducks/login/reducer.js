@@ -1,21 +1,22 @@
 import * as actions from "./actions";
+
 const initialState = {
-  status: "logged_out",
-  jwt: null,
+  isLoggedIn: false,
+  users: [],
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case actions.LOGGED_IN_SUCCESS:
       return {
-        status: "logged_in",
-        jwt: action.payload,
+        isLoggedIn: true,
+        users: [...action.payload],
       };
 
     case actions.LOGGED_OUT_SUCCESS:
       return {
-        status: "logged_out",
-        user: {},
+        status: "false",
+        users: [],
       };
 
     default:
