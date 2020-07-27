@@ -1,3 +1,4 @@
+import createReducer from "../../utils/reducer_factory";
 const initialState = {
   isLoggedIn: false,
   users: [],
@@ -28,7 +29,4 @@ const strategies = {
   __default__: (state, _) => state,
 };
 // refactor reduce, get ride of switch statement by replacement of stratgie pattern
-export default function reducer(state = initialState, action) {
-  const transform = strategies[action.type] || strategies.__default__;
-  return transform(state, action);
-}
+export default createReducer(strategies, initialState);
