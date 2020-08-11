@@ -15,7 +15,6 @@ RUN node -v
 
 # Install app dependencies
 COPY client-reactjs/package.json /usr/src/app/
-COPY client-reactjs/package-lock.json /usr/src/app/
 
 RUN npm install
 
