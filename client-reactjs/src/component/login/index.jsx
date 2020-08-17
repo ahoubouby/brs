@@ -16,12 +16,12 @@ const Login = () => {
     effect(value);
   };
 
-  const submit = (e) => {
+  function submit(e) {
     if (isValid(emailRegex, email)) {
       dispatch(login(email, password));
     } else setError(true);
     e.preventDefault();
-  };
+  }
 
   return (
     <div className="ui middle aligned center aligned grid">

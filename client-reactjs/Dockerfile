@@ -32,7 +32,7 @@
 # RUN npm run start:build
 
 # Main command
-CMD [ "npm", "run", "start:server" ]
+# CMD [ "npm", "run", "start:server" ]
 
 FROM node:12-alpine as build
 WORKDIR /app
