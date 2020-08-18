@@ -18,7 +18,7 @@ const useArray = (initValue) => {
     []
   );
 
-  return [value, add, clear, removeById, removeIndex];
+  return { value, add, clear, removeById, removeIndex };
 };
 
 export default useArray;
