@@ -3,6 +3,7 @@ import login from "../component/login";
 import notFound from "../pages/NotFound";
 
 const DashboardComp = () => <div>dashboard component</div>;
+const HomeCom = () => <div> hello home</div>;
 
 const exportDashboard = {
   path: "/dashbaord",
@@ -10,7 +11,12 @@ const exportDashboard = {
   name: "dashboard",
 };
 
-const routees = [login, exportDashboard, notFound];
+const exportHomeCom = {
+  path: "/home",
+  component: HomeCom,
+  name: "Home",
+};
+const routees = [login, exportDashboard, exportHomeCom, notFound];
 
 export { routees };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { shallowEqual, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import PrivateRouter from "./component/login/privateRouter";
+import PrivateRouter from "./component/privateRouter";
 import { routees } from "./routers";
 import Spinner from "./widgets/spinner";
 
@@ -21,7 +21,7 @@ const Routees = () => (
           path={el.path}
           key={index}
           component={el.component}
-          exact
+          name={el.name}
         />
       );
     })}
