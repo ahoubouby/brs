@@ -24,7 +24,7 @@ import java.util.Set;
 @Document(collection = "agency")
 public class Agency {
     @Id
-    private String id; 
+    private String id;
     @Indexed(unique = true, direction = IndexDirection.DESCENDING)
     private String code;
     @Indexed(unique = true, direction = IndexDirection.DESCENDING)
@@ -34,7 +34,6 @@ public class Agency {
     private User owner;
     @DBRef(lazy = true)
     private Set<Bus> buses;
-    
-            
-    
+
+
 }

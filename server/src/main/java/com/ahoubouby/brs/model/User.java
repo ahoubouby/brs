@@ -26,17 +26,17 @@ import java.util.Set;
 public class User {
     @Id
     private String id;
-    @Indexed(unique = true, direction= IndexDirection.DESCENDING)
-    private String email; 
+    @Indexed(unique = true, direction = IndexDirection.DESCENDING)
+    private String email;
     private String password;
     private String firstName;
-    private String lastName; 
+    private String lastName;
     private String mobileNumber;
     @DBRef
-    private Set<Role> roles; 
-    
-    public String getFullName () {
+    private Set<Role> roles;
+
+    public String getFullName() {
         return firstName != null ? firstName.concat(" ").concat(lastName) : "";
     }
-    
+
 }

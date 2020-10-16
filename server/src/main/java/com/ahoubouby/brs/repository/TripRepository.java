@@ -15,7 +15,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
-public interface TripRepository  extends MongoRepository<Trip, String> {
+public interface TripRepository extends MongoRepository<Trip, String> {
     Trip findBySourceStopAndDestStopAndBus(Stop source, Stop destination, Bus bus);
 
     List<Trip> findAllBySourceStopAndDestStop(Stop source, Stop destination);

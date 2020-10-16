@@ -16,7 +16,7 @@ import org.springframework.web.context.request.WebRequest;
 @ControllerAdvice
 @RestController
 public class CustomizedResponseEntityExceptionHandler {
-    
+
     @ExceptionHandler(BRSException.EntityNotFoundException.class)
     public final ResponseEntity handleNotFountExceptions(Exception ex, WebRequest request) {
         Response response = Response.notFound();

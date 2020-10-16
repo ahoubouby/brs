@@ -8,7 +8,6 @@ import com.ahoubouby.brs.model.Trip;
  */
 
 
-
 public class TripMapper {
     public static TripDto toTripDto(Trip trip) {
         return new TripDto()

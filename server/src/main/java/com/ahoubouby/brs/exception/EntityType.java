@@ -4,7 +4,7 @@ package com.ahoubouby.brs.exception;
  * E-MAIL: ahoubouby@gmail.com
  */
 
-public enum  EntityType {
+public enum EntityType {
     USER,
     ROLE,
     AGENCY,

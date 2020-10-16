@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Set;
 
 @Service
-public class CustomUserDetailsService  implements UserDetailsService {
+public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserService userService;

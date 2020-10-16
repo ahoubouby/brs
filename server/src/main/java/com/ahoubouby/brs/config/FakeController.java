@@ -18,13 +18,14 @@ import javax.validation.constraints.NotNull;
 
 @RestController
 @RequestMapping("api")
-@Api(value="brs-application")
+@Api(value = "brs-application")
 public class FakeController {
     @ApiOperation("Login")
     @PostMapping("/auth")
     public void fakeLogin(@RequestBody @Valid LoginRequest loginRequest) {
         throw new IllegalStateException("This method shouldn't be called. It's implemented by Spring Security filters.");
     }
+
     @ApiOperation("Logout")
     @PostMapping("/logout")
     public void fakeLogout() {
@@ -36,7 +37,7 @@ public class FakeController {
     @Accessors(chain = true)
     @NoArgsConstructor
     @JsonIgnoreProperties(ignoreUnknown = true)
-    private static class LoginRequest{
+    private static class LoginRequest {
         @NotNull(message = "{constraints.NotEmpty.message}")
         private String email;
         @NotNull(message = "{constraints.NotEmpty.message}")

@@ -27,7 +27,8 @@ import java.util.Arrays;
 public class BrsConfiguration {
 
     @Value("${api.version}")
-    String versionApi; 
+    String versionApi;
+
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
@@ -77,6 +78,7 @@ public class BrsConfiguration {
                 .version(versionApi)
                 .build();
     }
+
     private ApiKey apiKey() {
         return new ApiKey("apiKey", "Authorization", "header");
     }
